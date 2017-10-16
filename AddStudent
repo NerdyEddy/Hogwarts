@@ -1,0 +1,88 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class AddStudent {
+
+	private JFrame frame;
+	private JTextField FirstNametxt;
+	private JTextField LastNametxt;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AddStudent window = new AddStudent();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public AddStudent() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblAddStudent = new JLabel("Add Student");
+		lblAddStudent.setBounds(183, 6, 77, 16);
+		frame.getContentPane().add(lblAddStudent);
+		
+		JLabel lblFirstName = new JLabel("First Name");
+		lblFirstName.setBounds(6, 36, 77, 16);
+		frame.getContentPane().add(lblFirstName);
+		
+		JLabel lblLastName = new JLabel("Last Name");
+		lblLastName.setBounds(199, 36, 77, 16);
+		frame.getContentPane().add(lblLastName);
+		
+		FirstNametxt = new JTextField();
+		FirstNametxt.setBounds(16, 64, 130, 26);
+		frame.getContentPane().add(FirstNametxt);
+		FirstNametxt.setColumns(10);
+		
+		LastNametxt = new JTextField();
+		LastNametxt.setColumns(10);
+		LastNametxt.setBounds(209, 64, 130, 26);
+		frame.getContentPane().add(LastNametxt);
+		
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(327, 243, 117, 29);
+		frame.getContentPane().add(btnSubmit);
+		
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				frame.dispose();
+			}
+		});
+		btnCancel.setBounds(198, 243, 117, 29);
+		frame.getContentPane().add(btnCancel);
+		
+		JLabel lblHouse = new JLabel("House");
+		lblHouse.setBounds(199, 127, 61, 16);
+		frame.getContentPane().add(lblHouse);
+	}
+}
