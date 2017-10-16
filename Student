@@ -1,0 +1,16 @@
+public class Student 
+{
+	private String name;
+	private String year;
+	private String house;
+	private String wand;
+	
+	public Student(String name, String year, String house, String wand)
+	{
+		this.name = name;
+		this.year = year;
+		this.house = house;
+		this.wand = wand;
+	}
+
+}
